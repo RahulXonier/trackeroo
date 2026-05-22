@@ -1,0 +1,123 @@
+@import "tailwindcss";
+
+
+:root {
+  --primary: #1ba2c3;
+  --secondary: #33bf8b;
+
+  --primary-hover: #1590ad;
+  --secondary-hover: #2ca679;
+
+  --text-primary: #0f172a;
+  --text-secondary: #64748b;
+
+  --background: #ffffff;
+
+}
+
+
+
+body {
+  font-family: Instrument Sans, sans-serif;
+  transition: all 0.3s ease;
+}
+
+.text-sm {
+  font-size: 14px;
+}
+
+.text-md {
+  font-size: 18px;
+}
+
+.text-lg {
+  font-size: 22px;
+}
+
+.text-xl {
+  font-size: 26px;
+}
+
+.text-p {
+  font-size: 15px;
+  color: var(--color-slate-500);
+}
+
+.primary-btn {
+  padding: 12px 24px;
+  border: 1px solid var(--color-gray-200);
+  background: linear-gradient(to right,
+      #1ba2c3,
+      #4fd1c5,
+      #33bf8b);
+  color: white;
+  border-radius: 50px;
+}
+
+.primary-btn:hover {
+  cursor: pointer;
+  background: linear-gradient(to left,
+      #1ba2c3,
+      #4fd1c5,
+      #33bf8b);
+  transform: scale(1.05);
+  transition: all 0.5s ease;
+
+
+
+}
+
+.secondary-btn {
+  padding: 10px 28px;
+
+  border: 1px solid var(--color-gray-200);
+  /* background-color: rebeccapurple; */
+  color: var(--color-slate-400);
+  border-radius: 50px;
+}
+
+
+
+.secondary-btn:hover {
+  background-color: var(--color-green-50);
+  border-color: var(--color-green-300);
+  color: var(--color-green-600);
+  cursor: pointer;
+}
+
+.anime-trans {
+  transition: all 0.5s 1s linear;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+h1 {
+  font-size: 50px;
+  font-weight: 700;
+  color: var(--color-gray-600);
+
+  /* font-family: 'Space Grotesk', sans-serif; */
+}
+
+p {
+  font-size: 14px;
+  color: var(--color-slate-500)
+}
+
+
+h3 {
+  color: var(--color-slate-700);
+  font-size: 16px;
+  font-weight: 600;
+}
+
+h2 {
+  color: var(--color-slate-600);
+  font-size: 25px;
+  font-weight: 500;
+}
