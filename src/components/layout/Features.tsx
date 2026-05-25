@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import { AiOutlineThunderbolt } from 'react-icons/ai'
 import { FaUserShield } from 'react-icons/fa'
 import { LuMessageCircleMore } from 'react-icons/lu'
@@ -6,6 +6,11 @@ import { RiTeamFill } from 'react-icons/ri'
 import { TbTargetArrow } from 'react-icons/tb'
 import { VscGraph } from 'react-icons/vsc'
 import Secondarybtn from '../common/Secondarybtn'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
+gsap.registerPlugin(ScrollTrigger)
+
 
 const card =[
     {id:'1',icon:<VscGraph />, head:'Smart Analytics',para:'Real time insight and advance report to help you make better decision.', color:"bg-purple-200 text-purple-600",},
@@ -17,8 +22,28 @@ const card =[
 ]
 
 const Features = () => {
+    const featureRef = useRef(null)
+    useEffect(()=>{
+      const card = gsap.utils.toArray('.cards')
+
+      gsap.from(card,{
+         x:80,
+         opacity:0,
+         stagger:0.2,
+         duration:1,
+         ease:'power3.inOut',
+         scrollTrigger:{
+            trigger: featureRef.current,
+            start:'top 80%'
+         }
+      })
+
+    })
   return (
-    <div className='w-full py-12 min-h-[500px]'>
+    <div 
+    ref={featureRef}
+
+     className='w-full py-12 min-h-[500px]'>
         <div className='w-7xl mx-auto flex gap-12 flex-col items-center'>
             <div className='flex flex-col gap-4 items-center'>
                 
@@ -32,7 +57,7 @@ const Features = () => {
                     card.map((item)=>{
                         return(
                             <div key={item.id}
-                             className="flex gap-4 w-[380px] min-h-[100px] group  border border-slate-200 p-4 rounded-2xl ">
+                             className="flex cards gap-4 w-[380px] min-h-[100px] group  border border-slate-200 p-4 rounded-2xl ">
                                 <div className='w-[30%] flex justify-center items-center'>
                                     <div className={`w-15 h-15 group-hover:scale-110  text-xl flex justify-center items-center rounded-full ${item.color}`}>{item.icon}</div>
 

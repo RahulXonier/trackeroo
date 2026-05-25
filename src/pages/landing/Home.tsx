@@ -4,6 +4,7 @@ import Companies from '../../components/layout/Companies'
 import Features from '../../components/layout/Features'
 import RealTime from '../../components/layout/RealTime'
 import Choose from '../../components/layout/Choose'
+import TestimonialCarousel from '../../components/layout/Testimonial'
 
 
 
@@ -15,6 +16,7 @@ const Home = () => {
    <Features/>
    <RealTime/>
    <Choose/>
+   <TestimonialCarousel/>
    </>
   )
 }
