@@ -9,6 +9,7 @@ import acc from "../../assets/03-1.png"
 import { useEffect, useRef, useState } from 'react'
 import {motion} from 'motion/react'
 import gsap from 'gsap'
+import BlurScreen from '../common/BlurScreen'
 
 
 
@@ -58,17 +59,19 @@ useEffect(()=>{
     )
 },[])
   return (
-     <div className='w-full min-h-[80vh] py-12 relative  '>
-        <div className='absolute h-172 w-125 z-0 right-0 rounded-l-full bg-linear-150 from-[#1ba2c3] to-[#2ca679]'></div>
+     <div className='w-full min-h-[80vh] py-20 relative px-4 '>
+
+        {/* <BlurScreen /> */}
+        <div className='absolute hidden md:block  h-172 w-125 z-0 right-0 rounded-l-full bg-linear-150 from-[#1ba2c3] to-[#2ca679]'></div>
         
-        <div className='absolute  top-0 z-0 text-cyan-400 text-[300px]  w-[700px] opacity-35   left-0 blur-[1px]'>
+        <div className='absolute hidden md:block  top-0 z-0 text-cyan-400 text-[300px]  w-[700px] opacity-35   left-0 blur-[1px]'>
             <img src={bg} alt='icon' className='w-full h-full object-cover'/>
         </div>
         
-        <div className='w-7xl mx-auto  h-full flex justify-between  pt-16 '>
+        <div className='max-w-7xl mx-auto  h-full grid grid-cols-1 gap-10 lg:grid-cols-5 justify-between  pt-16 '>
             <div
               ref={containerRef}
-            className=' flex flex-col gap-6 justify-center w-[40%] z-1 '
+            className=' flex flex-col gap-6 justify-center  z-1 lg:col-span-2'
             >
                 <span className='py-2 px-6 rounded-3xl w-fit border border-teal-200 center utext  bg-green-50'> 
                     <BsStars className='text-amber-300 ' />
@@ -90,13 +93,13 @@ useEffect(()=>{
             </div>
             <div 
                ref={cardRef}
-            className='col-span-2 relative h-[550px] z-2  rounded-3xl w-[55%]  '>
+            className=' relative max-h-[550px] z-2  rounded-3xl  lg:col-span-3 '>
                  <div className={`absolute  bottom-[40px] z-0 rounded-2xl overflow-hidden  left-[-50px] shadow-[0px_0px_12px_#00000020] hover:shadow-[0px_0px_18px_#00000025]
                  ${order ? 'translate-x-3' : 'translate-x-[50px]'} anime-trans`}
                >
             <img src={acc} alt='icon' className='w-full h-full object-cover'/>
         </div>
-                <img src={dashboard} alt='image' className=' z-1 h-full w-full  rounded-3xl object-cover shadow-[0px_0px_12px_#00000020] hover:shadow-[0px_0px_18px_#00000025]'/>
+                <img src={dashboard} alt='image' className=' z-1 h-full w-full  rounded-3xl object-cover lg:object-fill shadow-[0px_0px_12px_#00000020] hover:shadow-[0px_0px_18px_#00000025] '/>
 
             </div>
 

@@ -1,10 +1,10 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation, Autoplay } from "swiper/modules";
-import { FaStar } from "react-icons/fa";
-
+import { FaArrowCircleLeft, FaArrowCircleRight, FaStar } from "react-icons/fa";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import { IoIosArrowDropleftCircle, IoIosArrowDroprightCircle } from "react-icons/io";
 
 const testimonials = [
   {
@@ -61,9 +61,8 @@ const testimonials = [
 
 const TestimonialCarousel = () => {
   return (
-    <section className="w-full py-24 bg-slate-50 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6">
-        {/* Heading */}
+    <section className="w-full py-20 bg-slate-50 overflow-hidden">
+      <div className="max-w-7xl mx-auto relative px-6">
         <div className="text-center mb-14">
           <h2 className="text-5xl font-bold text-slate-900">
             Trusted by teams worldwide
@@ -73,8 +72,12 @@ const TestimonialCarousel = () => {
             See what fast-growing companies say about our platform
           </p>
         </div>
+        <button className="prevbtn absolute top-[55%] left-2 z-20 text-5xl text-cyan-600"> <IoIosArrowDropleftCircle /></button>
+        <button className="nextbtn absolute top-[55%] right-2 z-20 text-5xl text-cyan-600"><IoIosArrowDroprightCircle /></button>
 
-        {/* Swiper */}
+
+
+
         <Swiper
           modules={[Pagination, Navigation, Autoplay]}
           slidesPerView={3}
@@ -84,9 +87,14 @@ const TestimonialCarousel = () => {
           autoplay={{
             delay: 3000,
             disableOnInteraction: false,
+            pauseOnMouseEnter:true
           }}
-        //   navigation
+          navigation={{
+           nextEl:'.nextbtn',
+           prevEl:'.prevbtn'
+          }}
           pagination={{
+            el: '.pgdots',
             clickable: true,
           }}
           breakpoints={{
@@ -100,7 +108,8 @@ const TestimonialCarousel = () => {
               slidesPerView: 3,
             },
           }}
-          className="pb-16"
+          style={{"padding": "20px 7px"}}
+          className=" "
         >
           {testimonials.map((item) => (
             <SwiperSlide key={item.id}>
@@ -119,19 +128,16 @@ const TestimonialCarousel = () => {
                   group
                 "
               >
-                {/* Stars */}
                 <div className="flex gap-1 mb-5 text-yellow-400">
                   {[...Array(5)].map((_, i) => (
                     <FaStar key={i} />
                   ))}
                 </div>
 
-                {/* Review */}
                 <p className="text-slate-600 leading-8 mb-8">
                   "{item.review}"
                 </p>
 
-                {/* User */}
                 <div className="flex items-center gap-4">
                   <img
                     src={item.image}
@@ -160,6 +166,14 @@ const TestimonialCarousel = () => {
             </SwiperSlide>
           ))}
         </Swiper>
+        <div className="flex  items-center justify-between mt-5 ">
+
+        <span className="pgdots text-center ml-5" />
+        </div>
+
+
+
+        
       </div>
     </section>
   );

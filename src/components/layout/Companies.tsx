@@ -41,9 +41,9 @@ const Companies = () => {
     <div
 
     ref={companiesRef}
-    className='w-full min-h-[50px]  flex flex-col gap-6 py-12 justify-center items-center  '>
-       <h3 className=''>Trusted by Fast-growing companies round the world</h3>
-       <div className='flex justify-center gap-15 items-center '>
+    className='w-full min-h-[50px] px-6 text-center flex flex-col gap-6 pt-20 justify-center items-center  '>
+       <h3 >Trusted by Fast-growing companies round the world</h3>
+       <div className='flex justify-center flex-wrap gap-15 items-center '>
         {
             data.map((item)=>{
                 return(

@@ -5,6 +5,7 @@ import Features from '../../components/layout/Features'
 import RealTime from '../../components/layout/RealTime'
 import Choose from '../../components/layout/Choose'
 import TestimonialCarousel from '../../components/layout/Testimonial'
+import Chatbot from '../../components/common/Chatbot'
 
 
 
@@ -17,6 +18,7 @@ const Home = () => {
    <RealTime/>
    <Choose/>
    <TestimonialCarousel/>
+
    </>
   )
 }

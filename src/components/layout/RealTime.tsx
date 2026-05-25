@@ -8,6 +8,8 @@ import { BsGraphUp, BsGraphUpArrow } from 'react-icons/bs'
 import { VscGraph, VscGraphLine } from 'react-icons/vsc'
 import { MdOutlineAdd } from 'react-icons/md'
 import bg from '../../assets/17973908-removebg-preview.png'
+import HeadBtn from '../common/headbtn'
+import PrimaryBtn from '../common/PrimaryBtn'
 
 
 const data =[
@@ -22,16 +24,19 @@ const RealTime = () => {
 
   return (
     <div
-    className="w-full  h-[80vh] relative py-12 bg-slate-50  bg-cover bg-center"
-  style={{ backgroundImage: `url(${bg})` }}
->
+    className="w-full p-6 lg:p-0  min-h-[80vh] relative py-20 bg-slate-50   bg-cover bg-center">
+      <div
+    className="absolute inset-0 bg-cover bg-center opacity-20 -z-0"
+    // style={{ backgroundImage: `url(${bg})` }}
+  ></div>
+
          
 
-        <div className='w-7xl relative h-full mx-auto flex  items-center justify-between'>
-          <div className='w-[35%] h-full  rounded-2xl p-4 bg-slate-50  '>
+        <div className='max-w-7xl  relative h-full mx-auto  flex flex-wrap  items-center justify-between'>
+          <div className=' w-full lg:w-[35%] h-full  rounded-2xl p-4 bg-slate-50  '>
             <div className='flex flex-col h-full justify-center gap-6'>
 
-              <Secondarybtn value='DASHBOARD OVERVIEW' />
+              <HeadBtn value='Dashboard Overview' />
             <h2> 
               Real-time Insights, Smarter Decisions</h2>
             <p>Get a complete overview of your business performance with beautiful analytics and easy-to-understand repets.</p>
@@ -41,23 +46,18 @@ const RealTime = () => {
              <li className='flex gap-4 items-center text-slate-500'><FaCheckCircle  className='text-cyan-600'/> Analyze revenue and conversion</li>
              <li className='flex gap-4 items-center text-slate-500'><FaCheckCircle  className='text-cyan-600'/> Export reports instantly </li>
             </ul>
-            <button className='primary-btn w-fit'> Explore Dashboard</button>
+            <PrimaryBtn value='Explore Dashboard ' />
             </div>
 
           </div>
-          <div className='w-[60%] relative h-full flex items-center justify-center '>
+          <div className='w-full lg:w-[60%] relative h-full flex items-center justify-center '>
             
             {data.map((item)=>{
               return(
                  <SideCards key={item.id} sign={item.sign} hpre={item.hpre} hesuf={item.hesuf} head={item.head} num={item.num} num2={item.num2} suf={item.suf} prefix={item.prefix} p={item.p} prop={item.prop} gcolor={item.gcolor} gra={item.gra} />
-
-              )
-           
-          
+              )     
 })
-
-            }
-           
+            }         
             <div className='w-150 rounded-3xl shadow-[0_0_5px_#00000010] hover:shadow-[0_0_10px_#00000025] '>
             <img src={dashboard} alt='dashboard' className='object-cover rounded-3xl'/>
 

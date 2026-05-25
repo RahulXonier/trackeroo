@@ -40,7 +40,7 @@ return () => {
     <>
     <div
     ref={cursorRef}
-    className='fixed top-0 left-0 w-12 h-12 border-2 border-cyan-400 rounded-full pointer-events-none z-50 '
+    className='fixed top-0 left-0 w-12 h-12 border-2 border-cyan-400 rounded-full pointer-events-none z-51 '
        style={{
           transform: "translate(-50%, -50%)",
         }}>
@@ -49,7 +49,7 @@ return () => {
     </div>
        <div
     ref={dotRef}
-    className='fixed top-0 left-0 w-4 h-4 bg-cyan-400 rounded-full pointer-events-none z-50 '
+    className='fixed top-0 left-0 w-4 h-4 bg-cyan-400 rounded-full pointer-events-none z-55 '
       style={{
           transform: "translate(-50%, -50%)",
         }}

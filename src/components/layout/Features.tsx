@@ -8,17 +8,18 @@ import { VscGraph } from 'react-icons/vsc'
 import Secondarybtn from '../common/Secondarybtn'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import HeadBtn from '../common/headbtn'
 
 gsap.registerPlugin(ScrollTrigger)
 
 
 const card =[
-    {id:'1',icon:<VscGraph />, head:'Smart Analytics',para:'Real time insight and advance report to help you make better decision.', color:"bg-purple-200 text-purple-600",},
-    {id:'2',icon:<RiTeamFill />, head:'Team Management',para:'Manage your teams, roles and permission with ease and flexibility', color:"bg-blue-200 text-blue-600"},
-    {id:'3',icon:<FaUserShield />, head:'Role Permissions',para:'Granular access controll ensures data security and accountability.', color:"bg-green-200 text-green-600"},
-    {id:'4',icon:<LuMessageCircleMore />, head:'Communication Tools',para:'Stay connected with your teams and clients through smart communication.', color:"bg-pink-200 text-pink-600"},
-    {id:'5',icon:<AiOutlineThunderbolt />, head:'Automation',para:' Automate repetitive tasks and focus on what really matters. ', color:"bg-red-200 text-red-600"},
-    {id:'6',icon:<TbTargetArrow />, head:' Lead Tracking ',para:'Track leads, follow-ups, and conversions in one integrated pipeline.', color:"bg-amber-200 text-amber-600"},
+    {id:'1',icon:<VscGraph />, head:'Smart Analytics',para:'Real time insight and advance report to help you make better decision.', color:"bg-purple-200 text-purple-600",circle:'bg-purple-100'},
+    {id:'2',icon:<RiTeamFill />, head:'Team Management',para:'Manage your teams, roles and permission with ease and flexibility', color:"bg-blue-200 text-blue-600",circle:'bg-blue-100'},
+    {id:'3',icon:<FaUserShield />, head:'Role Permissions',para:'Granular access controll ensures data security and accountability.', color:"bg-green-200 text-green-600",circle:'bg-green-100'},
+    {id:'4',icon:<LuMessageCircleMore />, head:'Communication Tools',para:'Stay connected with your teams and clients through smart communication.', color:"bg-pink-200 text-pink-600",circle:'bg-pink-100'},
+    {id:'5',icon:<AiOutlineThunderbolt />, head:'Automation',para:' Automate repetitive tasks and focus on what really matters. ', color:"bg-red-200 text-red-600",circle:'bg-red-100'},
+    {id:'6',icon:<TbTargetArrow />, head:' Lead Tracking ',para:'Track leads, follow-ups, and conversions in one integrated pipeline.', color:"bg-amber-200 text-amber-600",circle:'bg-amber-100'},
 ]
 
 const Features = () => {
@@ -43,28 +44,29 @@ const Features = () => {
     <div 
     ref={featureRef}
 
-     className='w-full py-12 min-h-[500px]'>
-        <div className='w-7xl mx-auto flex gap-12 flex-col items-center'>
+     className='w-full px-6 text-center  py-20 min-h-[500px]'>
+        <div className='max-w-7xl mx-auto flex gap-12 flex-col items-center'>
             <div className='flex flex-col gap-4 items-center'>
                 
-                <Secondarybtn value='Features'/>
-            <h3 >Everything You Need To Grow</h3>
-            <p>Poweful feature to designed to steamline your workflow and boost productivity</p>
+                <HeadBtn value='Features'/>
+            <h2 >Everything You Need To Grow</h2>
+            <p className='text-center'>Poweful feature to designed to steamline your workflow and boost productivity</p>
 
             </div>
-            <div className="flex gap-6 flex-wrap  justify-between w-full">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-auto px-12 lg:px-6  gap-6  w-full">
                 {
                     card.map((item)=>{
                         return(
                             <div key={item.id}
-                             className="flex cards gap-4 w-[380px] min-h-[100px] group  border border-slate-200 p-4 rounded-2xl ">
+                             className="flex cards gap-4 max-w-[380px] min-h-[100px] relative group  border border-slate-200 p-4 rounded-2xl overflow-hidden ">
+                                <div className={`absolute top-0 right-0 w-20 h-20 rounded-bl-full opacity-40 ${item.circle} `} />
                                 <div className='w-[30%] flex justify-center items-center'>
                                     <div className={`w-15 h-15 group-hover:scale-110  text-xl flex justify-center items-center rounded-full ${item.color}`}>{item.icon}</div>
 
                                 </div>
                                 
                                 <div className='w-[65%] '>
-                                    <h3 className='font-bold'>{item.head}</h3>
+                                    <span className='font-bold text-[20px]'>{item.head}</span>
                                     <p className='mt-2'>{item.para}</p>
 
                                 </div>

@@ -20,7 +20,7 @@
 body {
   font-family: Instrument Sans, sans-serif;
   transition: all 0.3s ease;
-  
+
 
 }
 
@@ -114,13 +114,13 @@ p {
 
 h3 {
   color: var(--color-slate-700);
-  font-size: 16px;
+  font-size: 25px;
   font-weight: 600;
 }
 
 h2 {
   color: var(--color-slate-600);
-  font-size: 25px;
+  font-size: 44px;
   font-weight: 500;
 }
 
