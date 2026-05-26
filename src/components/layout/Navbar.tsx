@@ -8,6 +8,7 @@ import PrimaryBtn from "../common/PrimaryBtn"
 import { Link } from "react-router-dom"
 import DropDown from "../common/DropDown"
 import { TiThMenu } from "react-icons/ti"
+import { useEffect, useState } from "react"
 
 export const SolutionData = [
   {id:1,
@@ -34,8 +35,7 @@ export const SolutionData = [
         {id:2, head:'Marketing'},
         {id:3, head:'IT'},
         {id:4, head:'Product'},
-        {id:5, head:      "HR Management",
-},
+        {id:5, head:"HR Management"},
 
    
     ],
@@ -45,12 +45,9 @@ export const SolutionData = [
     title: "By Size",
     items: [
         {id:1, head:'Enterprise'},
-        {id:2, head:      "Small Business",
-},
-        {id:3, head:      "Startup",
-},
-        {id:4, head:      "Non-profit",
-},
+        {id:2, head:"Small Business",},
+        {id:3, head:"Startup"},
+        {id:4, head:"Non-profit"},
         {id:5, head:'Agency'},
       
     ],
@@ -76,10 +73,23 @@ export const SolutionData = [
 
 
 
+
+
 const Navbar = () => {
+  const [scrolled ,setScrolled] = useState(false)
+useEffect(() => {
+  const handleScroll = () => {
+    setScrolled(window.scrollY > 100);
+  };
+
+  window.addEventListener("scroll", handleScroll);
+
+  return () => window.removeEventListener("scroll", handleScroll);
+}, []);
   return (
-    <div className='w-full min-h-[60px] z-50   sticky top-5'>
-        <div className="max-w-7xl px-10 py-4 md:py-0 mx-auto rounded-full backdrop-blur-2xl  bg-white/10 flex justify-between items-center shadow-[10px_0px_30px_rgba(0,0,0,0.20)]">
+    <div className={`w-full min-h-[60px] z-50  sticky  anime-trans
+    ${scrolled ? 'top-0' : 'top-5'}`}>
+        <div className="max-w-7xl px-10 py-2 md:py-0 mx-auto rounded-full backdrop-blur-2xl  bg-white/10 flex justify-between items-center shadow-[10px_0px_30px_rgba(0,0,0,0.20)]">
                 <div className="w-[30%] h-[40px] ">
                     <img src={logo} alt="logo" className="h-full "/>
                     </div>
@@ -135,7 +145,7 @@ const Navbar = () => {
 
   <li className="group relative flex gap-1 py-6 my-2 items-center cursor-pointer hover:text-blue-500">
     Pricing
-    <IoMdArrowDropdown className="text-lg transition-transform duration-300 group-hover:rotate-180" />
+    {/* <IoMdArrowDropdown className="text-lg transition-transform duration-300 group-hover:rotate-180" />
 
     <div className="absolute text-slate-400 top-22 left-0 w-52 bg-white shadow-xl rounded-2xl p-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-gray-100">
       <ul className="flex flex-col gap-2 text-sm font-medium tracking-normal">
@@ -143,7 +153,7 @@ const Navbar = () => {
         <li className="hover:bg-slate-100 px-3 py-2 rounded-lg hover:text-blue-500 ">Pro Plan</li>
         <li className="hover:bg-slate-100 px-3 py-2 rounded-lg hover:text-blue-500">Enterprise</li>
       </ul>
-    </div>
+    </div> */}
   </li>
 
 </ul>

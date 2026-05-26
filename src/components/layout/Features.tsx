@@ -49,23 +49,26 @@ const Features = () => {
             <div className='flex flex-col gap-4 items-center'>
                 
                 <HeadBtn value='Features'/>
-            <h2 >Everything You Need To Grow</h2>
-            <p className='text-center'>Poweful feature to designed to steamline your workflow and boost productivity</p>
+            <h2 >Everything You{' '}
+            <span className='bg-gradient-to-r from-cyan-500 to-emerald-400 bg-clip-text text-transparent'>
+                 Need To Grow
+                 </span></h2>
+            <p className='text-center'>Powerful feature to designed to streamline your workflow and boost productivity</p>
 
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-auto px-12 lg:px-6  gap-6  w-full">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  text-start mx-auto px-12 lg:px-6  gap-6  w-full">
                 {
                     card.map((item)=>{
                         return(
                             <div key={item.id}
                              className="flex cards gap-4 max-w-[380px] min-h-[100px] relative group  border border-slate-200 p-4 rounded-2xl overflow-hidden ">
-                                <div className={`absolute top-0 right-0 w-20 h-20 rounded-bl-full opacity-40 ${item.circle} `} />
+                                <div className={`absolute top-0 right-0 w-20 h-20 z-1 rounded-bl-full opacity-40 group-hover:h-30 group-hover:w-30 anime-trans ${item.circle} `} />
                                 <div className='w-[30%] flex justify-center items-center'>
-                                    <div className={`w-15 h-15 group-hover:scale-110  text-xl flex justify-center items-center rounded-full ${item.color}`}>{item.icon}</div>
+                                    <div className={`w-15 h-15 group-hover:scale-110  text-xl flex justify-center anime-trans items-center rounded-full ${item.color}`}>{item.icon}</div>
 
                                 </div>
                                 
-                                <div className='w-[65%] '>
+                                <div className='w-[65%] z-2 '>
                                     <span className='font-bold text-[20px]'>{item.head}</span>
                                     <p className='mt-2'>{item.para}</p>
 

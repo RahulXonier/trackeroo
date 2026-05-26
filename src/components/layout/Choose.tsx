@@ -8,6 +8,7 @@ import { FaClockRotateLeft } from 'react-icons/fa6'
 import { gsap } from 'gsap'
 import img from '../../assets/ChatGPT Image May 22, 2026, 05_43_14 PM.png'
 import HeadBtn from '../common/headbtn'
+import PrimaryBtn from '../common/PrimaryBtn'
 
 const data = [
   { id: 1, icon: <MdOutlineSecurity />, main: 'Secure & Reliable' },
@@ -39,7 +40,7 @@ const Choose = () => {
 
     // gsap.from('.feature-card', {
     //   opacity: 0,
-    //   y: 40,
+    //   y: 20,
     //   stagger: 0.1,
     //   duration: 0.8,
     //   delay: 0.4,
@@ -72,13 +73,13 @@ const Choose = () => {
       <div className='absolute top-20 left-10 w-72 h-72 bg-cyan-400/20 blur-3xl rounded-full' />
       <div className='absolute bottom-10 right-10 w-72 h-72 bg-emerald-400/20 blur-3xl rounded-full' />
 
-      <div className='w-[90%] max-w-7xl mx-auto relative z-20 flex flex-col lg:flex-row items-center justify-between gap-16'>
+      <div className=' max-w-7xl mx-auto relative z-20 flex flex-col lg:flex-row items-center justify-between gap-16'>
         
 
-        <div className='choose-img w-full lg:w-[48%] relative group'>
+        <div className='choose-img w-full lg:w-[45%] relative group'>
           
 
-          <div className='absolute inset-0 bg-gradient-to-r from-cyan-500 to-emerald-400 rounded-2xl blur-lg opacity-30 group-hover:opacity-50 group-hover:blur-xl transition-all duration-500' />
+          <div className='absolute inset-0 bg-linear-to-r from-cyan-300 to-emerald-200 rounded-2xl blur-lg opacity-30 group-hover:opacity-50 group-hover:blur-xl group-hover:bg-linear-to-r group-hover:from-cyan-500 group-hover:to-emerald-400  transition-all duration-600' />
 
           <img
             src={img}
@@ -131,6 +132,7 @@ const Choose = () => {
               </li>
             ))}
           </ul>
+          <PrimaryBtn value='Get Demo'/>
         </div>
       </div>
     </div>

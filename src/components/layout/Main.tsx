@@ -1,13 +1,11 @@
 import { BsStars } from 'react-icons/bs'
-import { FaArrowRight } from 'react-icons/fa'
 import dashboard from '../../assets/dashboard ss.png'
 import Secondarybtn from '../common/Secondarybtn'
 import PrimaryBtn from '../common/PrimaryBtn'
-import { TbGridDots } from 'react-icons/tb'
 import bg from "../../assets/shape-1.png"
 import acc from "../../assets/03-1.png"
-import { useEffect, useRef, useState } from 'react'
-import {motion} from 'motion/react'
+import { useEffect, useRef } from 'react'
+
 import gsap from 'gsap'
 import BlurScreen from '../common/BlurScreen'
 
@@ -15,18 +13,26 @@ import BlurScreen from '../common/BlurScreen'
 
 
 const Main = () => {
-    const [order,setOrder] = useState(false)
+
 
     const cardRef = useRef(null)
     const containerRef = useRef(null)
 
-  useEffect(() => {
-        const timeout = setTimeout(() => setOrder(!order), 2000)
-        return () => clearTimeout(timeout)
-    }, [order])
 
 
 useEffect(()=>{
+
+    gsap.fromTo('.box',{
+        x:-20,
+
+    },{
+        x:50,
+        duration : 2,
+        repeat:-1,
+        ease:'none',
+        yoyo:true,
+    });
+
     gsap.fromTo(
         cardRef.current,
         {
@@ -78,7 +84,7 @@ useEffect(()=>{
                     <span className='bg-gradient-to-r from-[#1ba2c3] to-[#2ca679] bg-clip-text text-transparent '>All-In-One CRM Platform
                         </span></span>
                 <h1>
-                    Manage Leads, Role, Teams & Sales In One<br/>
+                    Manage Leads, Role, Teams & Sales In One{' '}
                     <span className='bg-linear-to-r from-[#1ba2c3] to-[#2ca679] bg-clip-text text-transparent'> Smart CRM</span> 
 
                 </h1>
@@ -94,8 +100,8 @@ useEffect(()=>{
             <div 
                ref={cardRef}
             className=' relative max-h-[550px] z-2  rounded-3xl  lg:col-span-3 '>
-                 <div className={`absolute  bottom-[40px] z-0 rounded-2xl overflow-hidden  left-[-50px] shadow-[0px_0px_12px_#00000020] hover:shadow-[0px_0px_18px_#00000025]
-                 ${order ? 'translate-x-3' : 'translate-x-[50px]'} anime-trans`}
+                
+         <div className={`absolute  bottom-[40px] z-0 rounded-2xl overflow-hidden left-[-50px] shadow-[0px_0px_12px_#00000020] hover:shadow-[0px_0px_18px_#00000025] box`}
                >
             <img src={acc} alt='icon' className='w-full h-full object-cover'/>
         </div>

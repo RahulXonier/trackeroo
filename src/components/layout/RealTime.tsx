@@ -13,20 +13,19 @@ import PrimaryBtn from '../common/PrimaryBtn'
 
 
 const data =[
-  {id:1,head:'Total Leads',sign:<MdOutlineAdd />,num:55163,num2:12.5,suf:'',prefix:'%',p:'this month',gra:<BsGraphUpArrow />,
-    prop:'absolute top-0 left-0 rounded-2xl',gcolor:'text-green-400'},
-  {id:2,head:'Revenue',num:100,sign:<MdOutlineAdd />,num2:10,hesuf:'$',prefix:'%',p:'this month',gra:<VscGraphLine />,prop:'absolute top-0 right-0 rounded-2xl',gcolor:'text-amber-400'},
-  {id:3,head:'Conversion Rate',sign:<MdOutlineAdd />,num:54,hpre:'%',num2:4,suf:'',prefix:'%',p:'this month',prop:'absolute bottom-[90px] left-0 rounded-2xl',gra:<VscGraph />,gcolor:'text-red-400'},
-  {id:4,head:'Active User',num:78,sign:<MdOutlineAdd />,num2:15,suf:'',prefix:'%',p:'this month',prop:'absolute bottom-[90px] right-0 rounded-2xl',gra:<BsGraphUp />,gcolor:'text-blue-400'},
+  {id:1,head:'Total Leads',sign:<MdOutlineAdd />,num:55163,num2:12.5,suf:'',prefix:'%',p:'this month',gra:<BsGraphUpArrow />,prop:'absolute -top-10 left-0 rounded-2xl',gcolor:'text-green-400'},
+  {id:2,head:'Revenue',num:100,sign:<MdOutlineAdd />,num2:10,hesuf:'$',prefix:'%',p:'this month',gra:<VscGraphLine />,prop:'absolute -top-10 right-0 rounded-2xl',gcolor:'text-amber-400'},
+  {id:3,head:'Conversion Rate',sign:<MdOutlineAdd />,num:54,hpre:'%',num2:4,suf:'',prefix:'%',p:'this month',prop:'absolute bottom-[70px] left-0 rounded-2xl',gra:<VscGraph />,gcolor:'text-red-400'},
+  {id:4,head:'Active User',num:78,sign:<MdOutlineAdd />,num2:15,suf:'',prefix:'%',p:'this month',prop:'absolute bottom-[70px] right-0 rounded-2xl',gra:<BsGraphUp />,gcolor:'text-blue-400'},
 ]
 
 const RealTime = () => {
 
   return (
     <div
-    className="w-full p-6 lg:p-0  min-h-[80vh] relative py-20 bg-slate-50   bg-cover bg-center">
+    className="w-full px-6 lg:px-0  min-h-[80vh] relative py-20 bg-slate-50   bg-cover bg-center">
       <div
-    className="absolute inset-0 bg-cover bg-center opacity-20 -z-0"
+    className="absolute inset-0 bg-cover bg-center opacity-20 "
     // style={{ backgroundImage: `url(${bg})` }}
   ></div>
 
@@ -38,7 +37,10 @@ const RealTime = () => {
 
               <HeadBtn value='Dashboard Overview' />
             <h2> 
-              Real-time Insights, Smarter Decisions</h2>
+              Real-Time Insights,{' '}
+            <span className='bg-gradient-to-r from-cyan-500 to-emerald-400 bg-clip-text text-transparent'>
+               Smarter Decisions
+               </span></h2>
             <p>Get a complete overview of your business performance with beautiful analytics and easy-to-understand repets.</p>
             <ul className='text-sm flex flex-col gap-4 justify-center '>
              <li className='flex  gap-4 text-slate-500'><FaCheckCircle  className='text-cyan-600'/>Track performance in real-time</li> 
@@ -58,8 +60,8 @@ const RealTime = () => {
               )     
 })
             }         
-            <div className='w-150 rounded-3xl shadow-[0_0_5px_#00000010] hover:shadow-[0_0_10px_#00000025] '>
-            <img src={dashboard} alt='dashboard' className='object-cover rounded-3xl'/>
+            <div className='w-150 rounded-3xl shadow-[0_0_5px_#00000010] hover:shadow-[0_0_15px_#00000025] transition-all duration-400'>
+            <img src={dashboard} alt='dashboard' className='object-cover rounded-3xl '/>
 
             </div>
           </div>

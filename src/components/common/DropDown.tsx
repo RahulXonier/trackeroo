@@ -4,7 +4,7 @@ const DropDown = ({title,items}) => {
     console.log(items)
   return (
     <div className='flex flex-col gap-4'>
-        <h3 className='w-fit'>{title}</h3>
+        <span className='w-fit text-sm text-gray-600'>{title}</span>
         <ul className="flex flex-col gap-2 text-sm font-medium tracking-normal">
         {
             items.map((i)=>{

@@ -65,15 +65,17 @@ const TestimonialCarousel = () => {
       <div className="max-w-7xl mx-auto relative px-6">
         <div className="text-center mb-14">
           <h2 className="text-5xl font-bold text-slate-900">
-            Trusted by teams worldwide
+            Trusted By {' '}
+            <span className='bg-gradient-to-r from-cyan-500 to-emerald-400 bg-clip-text text-transparent'>
+             Teams Worldwide</span>
           </h2>
 
-          <p className="text-slate-500 mt-4 text-lg">
+          <p className= " mt-4 ">
             See what fast-growing companies say about our platform
           </p>
         </div>
-        <button className="prevbtn absolute top-[55%] left-2 z-20 text-5xl text-cyan-600"> <IoIosArrowDropleftCircle /></button>
-        <button className="nextbtn absolute top-[55%] right-2 z-20 text-5xl text-cyan-600"><IoIosArrowDroprightCircle /></button>
+        <button className="prevbtn absolute top-[55%] left-2 z-20 text-5xl cursor-pointer text-cyan-600"> <IoIosArrowDropleftCircle /></button>
+        <button className="nextbtn absolute top-[55%] right-2 z-20 text-5xl cursor-pointer text-cyan-600"><IoIosArrowDroprightCircle /></button>
 
 
 

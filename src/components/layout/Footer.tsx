@@ -19,12 +19,12 @@ const icon =[
 
 const Footer = () => {
   return (
-    <div className="w-full min-h-[50vh] bg-linear-to-b from-slate-100 to-cyan-600 py-30 ">
-        <div className=" w-full md:w-7xl p-4  mx-auto h-full ">
+    <div className="w-full min-h-[50vh]  py-20 ">
+        <div className=" w-full md:max-w-7xl py-10 px-5 rounded-2xl  mx-auto h-full bg-linear-to-t from-cyan-600 to-cyan-500">
             <div className=' grid grid-cols-2 lg:grid-cols-4 gap-8'>
             <div className="flex col-span-2 md:col-span-1 flex-col gap-8">
                 <div className='h-20'><img src={logo} alt="trackeroo" className='h-full'/></div>
-                <div><p>Trackeroo is a modern platform  that helps you manage your business,track performance, and grow digitally</p></div>
+                <div><span className='text-white/60 text-sm'>Trackeroo is a modern platform  that helps you manage your business, track performance, and grow digitally</span></div>
                 <div className=" flex gap-4 items-center">
                     {
                         icon.map((i)=>(<div key={i.id} className='flex h-12 w-12 rounded-full border border-gray-200  
@@ -33,42 +33,53 @@ const Footer = () => {
 
                 </div>
             </div>
-             <div className="ml-10">
-                <h3 className='mb-3 uppercase tracking-wide'>Company</h3>
-                <ul className='flex flex-col gap-4'>
-                    <li className='flex gap-2 items-center text-slate-500 font-medium text-sm'><MdKeyboardArrowRight className='text-lg' />About Us</li>
-                    <li className='flex gap-2 items-center text-slate-500 font-medium text-sm'><MdKeyboardArrowRight className='text-lg'/>Our Services</li>
-                    <li className='flex gap-2 items-center text-slate-500 font-medium text-sm'><MdKeyboardArrowRight className='text-lg'/>Case Studies</li>
-                    <li className='flex gap-2 items-center text-slate-500 font-medium text-sm'><MdKeyboardArrowRight className='text-lg'/>Career</li>
-                    <li className='flex gap-2 items-center text-slate-500 font-medium text-sm'><MdKeyboardArrowRight className='text-lg'/>Blog </li>
-                    <li className='flex gap-2 items-center text-slate-500 font-medium text-sm'><MdKeyboardArrowRight className='text-lg'/>Contact Us</li>
+             <div className="ml-10 flex flex-col gap-6">
+                <span className=' uppercase font-bold relative text-lg tracking-wide text-[#043264] '>Company
+                <div className=' h-[2px] rounded-full absolute -bottom-1 left-0 w-10  bg-white/80'></div>
+
+                </span>
+                <ul className='flex flex-col gap-4 text-white/60'>
+                    <li className='flex gap-2 items-center  font-medium text-sm'>About Us</li>
+                    <li className='flex gap-2 items-center  font-medium text-sm'>
+                        Our Services</li>
+                    <li className='flex gap-2 items-center  font-medium text-sm'>
+                        Case Studies</li>
+                    <li className='flex gap-2 items-center font-medium text-sm'>Career</li>
+                    <li className='flex gap-2 items-center font-medium text-sm'>Blog </li>
+                    <li className='flex gap-2 items-center font-medium text-sm'>Contact Us</li>
                 </ul>
             </div>
-             <div className="">
-                <h3 className='mb-3 uppercase tracking-wide'>Quick Link</h3>
-                <ul className='flex flex-col gap-4 text-slate-500'>
-                    <li className='flex gap-2 items-center  font-medium text-sm'><MdKeyboardArrowRight className='text-lg'/>Dashboard</li>
-                    <li className='flex gap-2 items-center font-medium text-sm'><MdKeyboardArrowRight className='text-lg'/>Pricing</li>
-                    <li className='flex gap-2 items-center  font-medium text-sm'><MdKeyboardArrowRight className='text-lg'/>Features</li>
-                    <li className='flex gap-2 items-center font-medium text-sm'> <MdKeyboardArrowRight className='text-lg'/>Integrations</li>
-                    <li className='flex gap-2 items-center  font-medium text-sm'><MdKeyboardArrowRight className='text-lg'/>Help center</li>
-                    <li className='flex gap-2 items-center  font-medium text-sm'><MdKeyboardArrowRight className='text-lg'/>Terms and Condition</li>
+             <div className="flex flex-col gap-6">
+                <span className=' uppercase font-bold text-lg relative tracking-wide text-[#043264]'>Quick Link
+                <div className=' h-[2px] rounded-full absolute -bottom-1 left-0 w-10  bg-white/80'></div>
+                </span>
+                <ul className='flex flex-col gap-4 text-white/60'>
+                    <li className='flex gap-2 items-center  font-medium text-sm'>Dashboard</li>
+                    <li className='flex gap-2 items-center font-medium text-sm'>Pricing</li>
+                    <li className='flex gap-2 items-center  font-medium text-sm'>Features</li>
+                    <li className='flex gap-2 items-center font-medium text-sm'> Integrations</li>
+                    <li className='flex gap-2 items-center  font-medium text-sm'>Help center</li>
+                    <li className='flex gap-2 items-center  font-medium text-sm'>Terms and Condition</li>
                 </ul>
             </div>
-             <div className="flex flex-col gap-4 col-span-2 md:col-span-1">
-                <h3 className='mb-3 uppercase tracking-wide'>News Letter</h3>
-                <p>Subscribe  to our newsletter and get latest Update and Offer. </p>
-                <div className='flex  shadow-[0_0_10px_rgb(0,0,0,0.2)]   rounded-xl '>
-                    <input placeholder='Enter Your Mail' className=' outline-0 p-4'/>
-                    <button className='text-3xl bg-cyan-500 text-white flex justify-center items-center w-full rounded-xl rounded-l-lg'><BiLogoTelegram/></button>
+             <div className="flex flex-col gap-6 col-span-2 md:col-span-1">
+                <span className=' uppercase font-bold text-lg relative tracking-wide text-[#043264]'>News Letter
+                <div className=' h-[2px] rounded-full absolute -bottom-1 left-0 w-10  bg-white/80'></div>
+
+                </span>
+
+                <span className='text-white/60 text-sm'>Subscribe  to our newsletter and get latest Update and Offer. </span>
+                <div className='flex gap-4 justify-between shadow-white/30 shadow-[0_0_10px]  rounded-xl '>
+                    <input placeholder='Enter Your Mail' className='text-white/60 w-full outline-0 p-4' />
+                    <button className='text-3xl bg-cyan-600 text-white flex justify-center items-center w-fit px-5 rounded-xl rounded-l-lg'><BiLogoTelegram/></button>
                 </div>
 
             </div>
             </div>
             <div className='w-full h-[1px] bg-slate-300 mt-15'></div>
             <div className='flex flex-wrap gap-5 justify-between mt-5 items-center'>
-              <span className='text-gray-300'>  © 2026 Trackeroo. All rights reserved.</span>
-                <ul className='flex text-gray-300 items-center'>
+              <span className='text-white/60'>  © 2026 Trackeroo. All rights reserved.</span>
+                <ul className='flex text-white/60 items-center'>
                     <li className='  px-4  '>Privacy Policy</li>
                     <li className=' border-l px-4  '>Terms of use</li>
                     <li className=' border-l px-4  '>Refund Policy</li>
